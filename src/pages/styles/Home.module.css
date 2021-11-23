@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.home h1 {
+  margin: 0.5rem 0;
+}

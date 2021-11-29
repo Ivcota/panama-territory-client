@@ -2,13 +2,12 @@
 
 .inputCard {
   height: 70vh;
-  margin-bottom: 5rem;
+  width: clamp(100px, 80%, 500px);
+  padding: 1.5em;
+  box-sizing: border-box;
+  font-size: var(--fontMd);
   background-color: var(--white);
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   -webkit-box-shadow: 2px 3px 6px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 3px 6px 3px rgba(0, 0, 0, 0.15);
 }

@@ -1,0 +1,33 @@
+@import './vars.css';
+
+.signIn {
+  display: grid;
+  grid-template-rows: 0.3fr 1fr 0.2fr;
+  grid-template-areas:
+    'Title'
+    'Inputs'
+    'Footer';
+  justify-items: center;
+}
+
+.title {
+  grid-area: Title;
+  align-self: center;
+  margin: 0 0.5em;
+  letter-spacing: 2px;
+  font-size: var(--fontXl);
+  font-family: var(--fontOne);
+  color: var(--brand);
+}
+
+.inputContainer {
+  grid-area: Inputs;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.accountContainer {
+  grid-area: Footer;
+}

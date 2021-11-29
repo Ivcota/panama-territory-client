@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../Styles/SignIn.module.css';
+import styles from '../Styles/NewAcc.module.css';
 import InputCard from '../Cards/InputCard';
 
 interface Props {
@@ -8,18 +8,18 @@ interface Props {
   onClick?: () => void;
 }
 
-const SignIn: React.FC<Props> = (props) => {
+const NewAcc: React.FC<Props> = (props) => {
   return (
-    <InputCard className={`${props.className} ${styles.signIn}`}>
-      <h1 className={styles.title}>Sign In</h1>
+    <InputCard className={`${props.className} ${styles.newAcc}`}>
+      <h1 className={styles.title}>New Account</h1>
       <div className={styles.inputContainer}>
         <input type="email" />
         <input type="password" />
         <button>Sign In</button>
       </div>
       <div className={styles.accountContainer}>
-        <p>Don't Have an Account?</p>
-        <button onClick={props.onClick}>New Account</button>
+        <p>Already Have an Account?</p>
+        <button onClick={props.onClick}>Sign In</button>
       </div>
 
       {/* <Link to="/about">About Page</Link> */}
@@ -27,4 +27,4 @@ const SignIn: React.FC<Props> = (props) => {
   );
 };
 
-export default SignIn;
+export default NewAcc;

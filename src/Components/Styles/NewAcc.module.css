@@ -1,6 +1,6 @@
 @import './vars.css';
 
-.signIn {
+.newAcc {
   position: absolute;
   backface-visibility: hidden;
   transition: all 0.8s ease;
@@ -16,7 +16,7 @@
 .title {
   grid-area: Title;
   align-self: center;
-  margin: 0 0.5em;
+  margin: 0;
   letter-spacing: 2px;
   font-size: var(--fontXl);
   font-family: var(--fontOne);

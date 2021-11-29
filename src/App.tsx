@@ -1,11 +1,11 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./pages/About";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import About from './Components/About';
+import Dashboard from './Components/Dashboard';
+import Home from './Components/Home';
+import Login from './Components/Login';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -16,6 +16,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

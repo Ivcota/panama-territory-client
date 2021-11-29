@@ -1,9 +1,12 @@
+@import './vars.css';
+
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  background-color: var(--brand);
+  height: 100vh;
 }
 
 .home h1 {

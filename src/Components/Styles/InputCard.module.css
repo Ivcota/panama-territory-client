@@ -1,0 +1,5 @@
+@import './vars.css';
+
+.inputCard {
+  background-color: var(--color1-light);
+}

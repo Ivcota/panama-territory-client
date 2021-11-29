@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import { useFormik } from "formik";
-import React from "react";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
-import styles from "./styles/Login.module.css";
+import classNames from 'classnames';
+import { useFormik } from 'formik';
+import React from 'react';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import styles from './Styles/Login.module.css';
 
 // Draft Page. Feel free to restyle as needed.
 const Login = () => {
@@ -11,12 +11,12 @@ const Login = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     onSubmit: ({ email, password }) => {
       console.log(email, password);
-      navigate("/dashboard");
+      navigate('/dashboard');
     },
   });
 
@@ -40,7 +40,7 @@ const Login = () => {
               type="password"
             />
             <input
-              className={classNames(styles["card__submit-button"])}
+              className={classNames(styles['card__submit-button'])}
               type="submit"
             />
           </form>
@@ -48,8 +48,8 @@ const Login = () => {
             Don't have an account?
           </p>
           <Link
-            className={classNames(styles["card__new-account-text"])}
-            to={""}
+            className={classNames(styles['card__new-account-text'])}
+            to={''}
           >
             New Account
           </Link>

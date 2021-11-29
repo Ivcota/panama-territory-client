@@ -1,1 +1,189 @@
 /* Global Styles, Fonts, and Dimensions */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+html {
+  /* Brand foundation */
+
+  --brand-hue: 164;
+
+  --brand-saturation: 95%;
+
+  --brand-lightness: 36%;
+
+  /* light */
+
+  --brand-light: hsl(
+    var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+  );
+
+  --brand2-light: hsl(var(--brand-hue) var(--brand-saturation) 65%);
+
+  --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+
+  --text2-light: hsl(var(--brand-hue) 30% 30%);
+
+  --text3-light: hsl(var(--brand-hue) 35% 93%);
+
+  --color1-light: hsl(var(--brand-hue) 35% 25%);
+
+  --color2-light: hsl(var(--brand-hue) var(--brand-saturation) 62%);
+
+  --color3-light: hsl(var(--brand-hue) 25% 95%);
+
+  --color4-light: hsl(var(--brand-hue) 86% 73%);
+
+  --color5-light: hsl(var(--brand-hue) 35% 43%);
+
+  --accent-light: hsl(32, 92%, 63%);
+
+  /* dark */
+  /* 
+  --brand-dark: hsl(
+    var(--brand-hue) calc(var(--brand-saturation) / 2)
+      calc(var(--brand-lightness) / 1.5)
+  );
+
+  --text1-dark: hsl(var(--brand-hue) 15% 85%);
+
+  --text2-dark: hsl(var(--brand-hue) 5% 65%);
+
+  --text3-dark: hsl(var(--brand-hue) 5% 57%);
+
+  --text3-dark: hsl(var(--brand-hue) 5% 57%);
+
+  --color1-dark: hsl(var(--brand-hue) 10% 10%);
+
+  --color2-dark: hsl(var(--brand-hue) 10% 15%);
+
+  --color3-dark: hsl(var(--brand-hue) 5% 20%);
+
+  --color4-dark: hsl(var(--brand-hue) 5% 25%);
+
+  --color5-dark: hsl(var(--brand-hue) 10% 8%);
+
+  --accent-dark: hsl(32, 82%, 55%); */
+}
+
+:root {
+  color-scheme: light;
+
+  /*===== Colors =====*/
+
+  --brand: var(--brand-light);
+
+  --text1: var(--text1-light);
+
+  --text2: var(--text2-light);
+
+  --text3: var(--text3-light);
+
+  --color1: var(--color1-light);
+
+  --color2: var(--color2-light);
+
+  --color3: var(--color3-light);
+
+  --color4: var(--color4-light);
+
+  --color5: var(--color5-light);
+
+  --accent: var(--accent-light);
+  /*===== Fonts =====*/
+
+  --fontOne: 'Bebas Neue', cursive;
+
+  --fontTwo: 'Source Sans Pro', sans-serif;
+
+  /*===== Dimensions =====*/
+
+  --fontXl: clamp(24px, 9.5vw, 60px);
+
+  --fontLg: clamp(14px, 6.5vw, 32px);
+
+  --fontMd: clamp(10px, 4.5vw, 22px);
+
+  --fontSm: clamp(12px, 3vw, 18px);
+
+  --fontXs: clamp(6px, 2.3vw, 14px);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+   
+
+    --brand: var(--brand-dark);
+
+    --text1: var(--text1-dark);
+
+    --text2: var(--text2-dark);
+
+    --text3: var(--text3-dark);
+
+    --color1: var(--color1-dark);
+
+    --color2: var(--color2-dark);
+
+    --color3: var(--color3-dark);
+
+    --color4: var(--color4-dark);
+
+    --color5: var(--color5-dark);
+
+    --accent: var(--accent-dark);
+  }
+} */
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  /*===== Colors =====*/
+
+  --brand: var(--brand-light);
+
+  --text1: var(--text1-light);
+
+  --text2: var(--text2-light);
+
+  --text3: var(--text3-light);
+
+  --color1: var(--color1-light);
+
+  --color2: var(--color2-light);
+
+  --color3: var(--color3-light);
+
+  --color4: var(--color4-light);
+
+  --color5: var(--color5-light);
+
+  --accent: var(--accent-light);
+}
+
+/* [data-theme='dark'] {
+  color-scheme: dark;
+
+
+
+  --brand: var(--brand-dark);
+
+  --text1: var(--text1-dark);
+
+  --text2: var(--text2-dark);
+
+  --text3: var(--text3-dark);
+
+  --color1: var(--color1-dark);
+
+  --color2: var(--color2-dark);
+
+  --color3: var(--color3-dark);
+
+  --color4: var(--color4-dark);
+
+  --color5: var(--color5-dark);
+
+  --accent: var(--accent-dark);
+} */

@@ -2,10 +2,14 @@ import React from 'react';
 
 import styles from '../Styles/InputCard.module.css';
 
-const InputCard: React.FC = (props) => {
+interface Props {
+  className?: string;
+}
+
+const InputCard: React.FC<Props> = (props) => {
   return (
-    <div className={styles.inputCard}>
-      <div></div>
+    <div className={`${props.className} ${styles.inputCard}`}>
+      {props.children}
     </div>
   );
 };

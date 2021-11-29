@@ -1,5 +1,14 @@
 @import './vars.css';
 
 .inputCard {
-  background-color: var(--color1-light);
+  height: 70vh;
+  margin-bottom: 5rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 2px 3px 6px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 3px 6px 3px rgba(0, 0, 0, 0.15);
 }

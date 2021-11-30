@@ -34,7 +34,6 @@ const SignIn: React.FC<Props> = (props) => {
           name="email"
           autoComplete="on"
           required={true}
-          iconStyle={styles.valid}
           value={values.email}
           onChange={handleChange}
         />

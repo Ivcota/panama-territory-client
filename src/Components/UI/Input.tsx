@@ -1,7 +1,6 @@
-import React from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from '../Styles/Input.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import styles from "../Styles/Input.module.css";
 
 interface Props {
   type: string;
@@ -10,13 +9,17 @@ interface Props {
   placeholder: string;
   autoComplete: string;
   required: boolean;
+  value?: any;
+  onChange?: any;
 }
 
-const Input: React.FC<Props> = (props) => {
+const Input: React.FC<Props> = ({ onChange, value, ...props }) => {
   return (
     <div className={styles.input}>
       <FontAwesomeIcon className={styles.icon} icon={props.icon} />
       <input
+        value={value}
+        onChange={onChange}
         type={props.type}
         name={props.name}
         placeholder={props.placeholder}

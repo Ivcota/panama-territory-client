@@ -23,13 +23,13 @@ html {
 
   --text2-light: hsl(var(--brand-hue) 30% 30%);
 
-  --text3-light: hsl(var(--brand-hue) 35% 93%);
+  --text3-light: hsl(var(--brand-hue) 30% 60%);
 
   --color1-light: hsl(var(--brand-hue) 35% 25%);
 
   --color2-light: hsl(var(--brand-hue) var(--brand-saturation) 62%);
-
-  --color3-light: hsl(var(--brand-hue) 25% 95%);
+  /* Light-Grey */
+  --color3-light: hsl(var(--brand-hue) 20% 93%);
 
   --color4-light: hsl(var(--brand-hue) 86% 73%);
 

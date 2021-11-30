@@ -3,7 +3,7 @@
 .newAcc {
   position: absolute;
   backface-visibility: hidden;
-  transition: all 0.8s ease;
+  transition: transform 0.8s ease;
   display: grid;
   grid-template-rows: 0.3fr 1fr 0.2fr;
   grid-template-areas:

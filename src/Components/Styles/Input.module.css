@@ -1,0 +1,47 @@
+@import './vars.css';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input input {
+  width: 100%;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  margin: 0.7em 0;
+  border: none;
+  background-color: var(--color3);
+  font-family: var(--fontTwo);
+  font-size: var(--fontMd);
+  color: var(--text2);
+  letter-spacing: 0.8px;
+}
+
+.input input:-webkit-autofill,
+.input input:-webkit-autofill:hover,
+.input input:-webkit-autofill:focus {
+  border: none;
+  background-color: white !important;
+  color: var(--text) !important;
+}
+
+.input input::placeholder {
+  font-size: var(--fontMd);
+  text-transform: uppercase;
+}
+
+.input input:focus-visible {
+  outline: 3px solid var(--brand);
+}
+
+.icon {
+  position: absolute;
+  align-self: flex-end;
+  padding-right: 1em;
+  font-size: var(--fontMd);
+  color: var(--text3);
+}

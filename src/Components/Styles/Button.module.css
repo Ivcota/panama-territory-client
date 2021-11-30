@@ -1,0 +1,11 @@
+@import './vars.css';
+
+.btn {
+  border: none;
+  border-radius: 0.2rem;
+  font-size: var(--fontMd);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-family: var(--fontTwo);
+}

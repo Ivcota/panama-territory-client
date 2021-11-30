@@ -2,9 +2,11 @@ import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import InputCard from "../Cards/InputCard";
 import styles from "../Styles/SignIn.module.css";
 import Input from "../UI/Input";
+import { useAuthStore } from "./../../Auth/authStore";
 import { server } from "./../../Helpers/serverInfo";
 import Button from "./Button";
 
@@ -21,6 +23,8 @@ interface TokenResponse {
 
 const SignIn: React.FC<Props> = (props) => {
   const loginUrl = `${server}/accounts/login/`;
+  const navigate = useNavigate();
+  const { setAuth } = useAuthStore();
 
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
@@ -42,6 +46,9 @@ const SignIn: React.FC<Props> = (props) => {
         // Log User details
         console.log({ token, email, username });
         alert(`${username}, you have been signed in with the token: ${token}.`);
+        setAuth(username, email, token);
+
+        navigate("/dashboard");
       } catch (error) {
         console.error("Unable to login with credentials");
         alert("Incorrect credentials. Try again.");

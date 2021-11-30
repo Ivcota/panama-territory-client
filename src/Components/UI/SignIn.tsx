@@ -1,10 +1,11 @@
-import { faAt, faLock } from '@fortawesome/free-solid-svg-icons';
-import { useFormik } from 'formik';
-import React from 'react';
-import InputCard from '../Cards/InputCard';
-import styles from '../Styles/SignIn.module.css';
-import Input from '../UI/Input';
-import Button from './Button';
+import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
+import { useFormik } from "formik";
+import React from "react";
+import InputCard from "../Cards/InputCard";
+import styles from "../Styles/SignIn.module.css";
+import Input from "../UI/Input";
+import Button from "./Button";
+import { server } from "./../../Helpers/serverInfo";
 
 interface Props {
   className?: string;
@@ -12,14 +13,16 @@ interface Props {
 }
 
 const SignIn: React.FC<Props> = (props) => {
+  const loginUrl = `${server}/accounts/login/`;
+
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     onSubmit: ({ email, password }) => {
-      alert(email + ' ' + password);
-      alert('Signed In!');
+      alert(email + " " + password);
+      alert("Signed In!");
     },
   });
 

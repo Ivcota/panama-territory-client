@@ -1,25 +1,51 @@
-import { faAt, faLock } from '@fortawesome/free-solid-svg-icons';
-import { useFormik } from 'formik';
-import React from 'react';
-import InputCard from '../Cards/InputCard';
-import styles from '../Styles/SignIn.module.css';
-import Input from '../UI/Input';
-import Button from './Button';
+import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { useFormik } from "formik";
+import React from "react";
+import InputCard from "../Cards/InputCard";
+import styles from "../Styles/SignIn.module.css";
+import Input from "../UI/Input";
+import { server } from "./../../Helpers/serverInfo";
+import Button from "./Button";
 
 interface Props {
   className?: string;
   onClick?: () => void;
 }
 
+interface TokenResponse {
+  token: string;
+  username: string;
+  email: string;
+}
+
 const SignIn: React.FC<Props> = (props) => {
+  const loginUrl = `${server}/accounts/login/`;
+
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
-    onSubmit: ({ email, password }) => {
-      alert(email + ' ' + password);
-      alert('Signed In!');
+    onSubmit: async ({ email, password }) => {
+      console.log(loginUrl);
+
+      const loginInfo = {
+        email,
+        password,
+      };
+
+      try {
+        const { token, email, username }: TokenResponse = await (
+          await axios.post(loginUrl, loginInfo)
+        ).data;
+
+        console.log({ token, email, username });
+        alert(`${username}, you have been signed in with the token: ${token}.`);
+      } catch (error) {
+        console.error("Unable to login with credentials");
+        alert("Incorrect credentials. Try again.");
+      }
     },
   });
 

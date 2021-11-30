@@ -31,7 +31,7 @@ const SignIn: React.FC<Props> = (props) => {
       console.log(loginUrl);
 
       const loginInfo = {
-        email,
+        email: email.toLowerCase(),
         password,
       };
 

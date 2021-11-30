@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import styles from "./Styles/Home.module.css";
+import NewAcc from "./UI/NewAcc";
+import SignIn from "./UI/SignIn";
 
-import styles from './Styles/Home.module.css';
-import NewAcc from './UI/NewAcc';
-import SignIn from './UI/SignIn';
-
-const Home = () => {
+const SignInPage = () => {
   const [cardFlip, setCardFlip] = useState(true);
 
   const toggleCardFlip = () => {
@@ -25,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SignInPage;

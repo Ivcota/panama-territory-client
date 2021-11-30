@@ -6,6 +6,7 @@ import styles from '../Styles/NewAcc.module.css';
 import InputCard from '../Cards/InputCard';
 import Input from '../UI/Input';
 import Button from '../UI/Button';
+import { Link } from 'react-router-dom';
 
 interface Props {
   className?: string;
@@ -60,6 +61,9 @@ const NewAcc: React.FC<Props> = (props) => {
           title="Create Account"
           onClick={testClick}
         />
+        <Link className={styles.link} to="/">
+          Landing Page
+        </Link>
       </div>
       <div className={styles.accountContainer}>
         <p className={styles.question}>Already Have an Account?</p>

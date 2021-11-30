@@ -13,6 +13,12 @@ interface Props {
   onClick?: () => void;
 }
 
+interface TokenResponse {
+  token: string;
+  username: string;
+  email: string;
+}
+
 const SignIn: React.FC<Props> = (props) => {
   const loginUrl = `${server}/accounts/login/`;
 
@@ -24,19 +30,22 @@ const SignIn: React.FC<Props> = (props) => {
     onSubmit: async ({ email, password }) => {
       console.log(loginUrl);
 
+      const loginInfo = {
+        email,
+        password,
+      };
+
       try {
-        const res = await axios.post(loginUrl, {
-          email,
-          password,
-        });
+        const { token, email, username }: TokenResponse = await (
+          await axios.post(loginUrl, loginInfo)
+        ).data;
 
-        console.log(res.data);
+        console.log({ token, email, username });
+        alert(`${username}, you have been signed in with the token: ${token}.`);
       } catch (error) {
-        console.log(error);
+        console.error("Unable to login with credentials");
+        alert("Incorrect credentials. Try again.");
       }
-
-      alert(email + " " + password);
-      alert("Signed In!");
     },
   });
 

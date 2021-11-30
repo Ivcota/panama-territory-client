@@ -3,7 +3,7 @@
 .signIn {
   position: absolute;
   backface-visibility: hidden;
-  transition: transform 0.8s ease;
+  transition: all 0.8s ease;
   display: grid;
   grid-template-rows: 0.3fr 1fr 0.2fr;
   grid-template-areas:
@@ -29,6 +29,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.valid {
+  color: var(--success);
+}
+
+.invalid {
+  color: var(--error);
 }
 
 .signInBtn {

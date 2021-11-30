@@ -1,7 +1,6 @@
 @import './vars.css';
 
 .inputCard {
-  height: 70vh;
   width: clamp(100px, 80%, 500px);
   padding: 1.5em;
   box-sizing: border-box;

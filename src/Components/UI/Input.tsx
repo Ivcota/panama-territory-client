@@ -10,12 +10,16 @@ interface Props {
   placeholder: string;
   autoComplete: string;
   required: boolean;
+  iconStyle?: string;
 }
 
 const Input: React.FC<Props> = (props) => {
   return (
     <div className={styles.input}>
-      <FontAwesomeIcon className={styles.icon} icon={props.icon} />
+      <FontAwesomeIcon
+        className={`${styles.icon} ${props.iconStyle}`}
+        icon={props.icon}
+      />
       <input
         type={props.type}
         name={props.name}

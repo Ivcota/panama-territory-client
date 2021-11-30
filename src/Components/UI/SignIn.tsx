@@ -27,6 +27,7 @@ const SignIn: React.FC<Props> = (props) => {
           name="user_email"
           autoComplete="on"
           required={true}
+          iconStyle={styles.valid}
         />
         <Input
           icon={faLock}

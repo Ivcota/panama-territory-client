@@ -3,9 +3,9 @@
 .newAcc {
   position: absolute;
   backface-visibility: hidden;
-  transition: transform 0.8s ease;
+  transition: all 0.8s ease;
   display: grid;
-  grid-template-rows: 0.3fr 1fr 0.2fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
   grid-template-areas:
     'Title'
     'Inputs'
@@ -31,6 +31,56 @@
   align-items: center;
 }
 
+.valid {
+  color: var(--success);
+}
+
+.invalid {
+  color: var(--error);
+}
+
+.congSelect {
+  width: 100%;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  margin: 0.7em 0;
+  border: none;
+  background-color: var(--color3);
+  font-family: var(--fontTwo);
+  font-size: var(--fontMd);
+  color: var(--text2);
+  letter-spacing: 0.8px;
+}
+
+.congSelect:focus-visible {
+  outline: 3px solid var(--brand);
+}
+
+.signInBtn {
+  width: 100%;
+  background-color: var(--brand);
+  color: var(--white);
+  margin: 0.7em 0;
+  padding: 0.3em 0;
+}
+
 .accountContainer {
   grid-area: Footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.question {
+  font-size: var(--fontSm);
+  font-style: italic;
+  font-weight: 400;
+  margin: 1em 0 0.5em;
+}
+
+.cardFlipBtn {
+  color: var(--brand);
+  background-color: transparent;
 }

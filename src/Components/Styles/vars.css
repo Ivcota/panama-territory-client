@@ -35,7 +35,9 @@ html {
 
   --color5-light: hsl(var(--brand-hue) 35% 43%);
 
-  --accent-light: hsl(32, 92%, 63%);
+  --success-light: hsl(90, 100%, 44%);
+
+  --error-light: hsl(354, 100%, 68%);
 
   /* dark */
   /* 
@@ -90,7 +92,9 @@ html {
 
   --color5: var(--color5-light);
 
-  --accent: var(--accent-light);
+  --success: var(--success-light);
+
+  --error: var(--accent-light);
   /*===== Fonts =====*/
 
   --fontOne: 'Bebas Neue', cursive;

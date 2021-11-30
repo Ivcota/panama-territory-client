@@ -1,7 +1,7 @@
 import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import InputCard from "../Cards/InputCard";
 import styles from "../Styles/SignIn.module.css";
@@ -24,7 +24,13 @@ interface TokenResponse {
 const SignIn: React.FC<Props> = (props) => {
   const loginUrl = `${server}/accounts/login/`;
   const navigate = useNavigate();
-  const { setAuth } = useAuthStore();
+  const { setAuth, authenticated } = useAuthStore();
+
+  useEffect(() => {
+    if (authenticated) {
+      navigate("/dashboard");
+    }
+  }, []);
 
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {

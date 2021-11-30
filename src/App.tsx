@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./Components/About";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
-import { server } from "./Helpers/serverInfo";
 
 const App = () => {
   return (

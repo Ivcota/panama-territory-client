@@ -1,12 +1,12 @@
 import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import InputCard from "../Cards/InputCard";
 import styles from "../Styles/SignIn.module.css";
 import Input from "../UI/Input";
-import Button from "./Button";
 import { server } from "./../../Helpers/serverInfo";
-import axios from "axios";
+import Button from "./Button";
 
 interface Props {
   className?: string;
@@ -21,7 +21,20 @@ const SignIn: React.FC<Props> = (props) => {
       email: "",
       password: "",
     },
-    onSubmit: ({ email, password }) => {
+    onSubmit: async ({ email, password }) => {
+      console.log(loginUrl);
+
+      try {
+        const res = await axios.post(loginUrl, {
+          email,
+          password,
+        });
+
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+
       alert(email + " " + password);
       alert("Signed In!");
     },

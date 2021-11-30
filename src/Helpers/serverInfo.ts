@@ -1,1 +1,1 @@
-export const server = "panama-territory-app.herokuapp.com/api";
+export const server = "https://panama-territory-app.herokuapp.com/api";

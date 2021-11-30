@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useAuthStore } from "./Auth/authStore";
-import About from "./Components/About";
-import Dashboard from "./Components/Dashboard";
-import Landing from "./Components/Landing";
-import PrivateRoute from "./Components/PrivateRoute";
-import SignInPage from "./Components/SignInPage";
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useAuthStore } from './Auth/authStore';
+
+import About from './Components/About';
+import Dashboard from './Components/Dashboard';
+import Landing from './Components/Landing';
+import PrivateRoute from './Components/PrivateRoute';
+import SignInPage from './Components/SignInPage';
 
 const App = () => {
   const { restoreAuth } = useAuthStore();

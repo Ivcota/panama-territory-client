@@ -39,7 +39,7 @@ const SignIn: React.FC<Props> = (props) => {
         const { token, email, username }: TokenResponse = await (
           await axios.post(loginUrl, loginInfo)
         ).data;
-
+        // Log User details
         console.log({ token, email, username });
         alert(`${username}, you have been signed in with the token: ${token}.`);
       } catch (error) {

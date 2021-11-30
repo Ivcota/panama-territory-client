@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./Components/About";
 import Dashboard from "./Components/Dashboard";
-import Home from "./Components/Home";
+import SignInPage from "./Components/Home";
+import Landing from "./Components/Landing";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Landing />} />
+        <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

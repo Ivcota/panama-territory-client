@@ -107,7 +107,7 @@ html {
 
   --fontLg: clamp(14px, 6.5vw, 32px);
 
-  --fontMd: clamp(10px, 4.5vw, 22px);
+  --fontMd: clamp(10px, 4vw, 20px);
 
   --fontSm: clamp(12px, 3vw, 18px);
 

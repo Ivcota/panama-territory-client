@@ -41,7 +41,8 @@
 .icon {
   position: absolute;
   align-self: flex-end;
-  padding-right: 1em;
+  padding: 0.2em 1em 0.2em 0.5em;
   font-size: var(--fontMd);
+  background-color: var(--color3);
   color: var(--text3);
 }

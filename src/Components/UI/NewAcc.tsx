@@ -57,7 +57,7 @@ const NewAcc: React.FC<Props> = (props) => {
         </select>
 
         <Button
-          className={styles.signInBtn}
+          className={styles.newAccBtn}
           title="Create Account"
           onClick={testClick}
         />

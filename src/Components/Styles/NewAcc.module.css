@@ -57,12 +57,17 @@
   outline: 3px solid var(--brand);
 }
 
-.signInBtn {
+.newAccBtn {
   width: 100%;
   background-color: var(--brand);
   color: var(--white);
   margin: 0.7em 0;
   padding: 0.3em 0;
+}
+
+.newAccBtn:hover {
+  background-color: var(--color1);
+  transition: all 0.2s ease-in-out;
 }
 
 .accountContainer {
@@ -83,4 +88,9 @@
 .cardFlipBtn {
   color: var(--brand);
   background-color: transparent;
+}
+
+.cardFlipBtn:hover {
+  color: var(--color1);
+  transition: all 0.2s ease-in-out;
 }

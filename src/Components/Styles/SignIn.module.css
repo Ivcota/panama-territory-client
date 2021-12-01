@@ -47,6 +47,11 @@
   padding: 0.3em 0;
 }
 
+.signInBtn:hover {
+  background-color: var(--color1);
+  transition: all 0.2s ease-in-out;
+}
+
 .accountContainer {
   grid-area: Footer;
   display: flex;
@@ -65,4 +70,9 @@
 .cardFlipBtn {
   color: var(--brand);
   background-color: transparent;
+}
+
+.cardFlipBtn:hover {
+  color: var(--color1);
+  transition: all 0.2s ease-in-out;
 }

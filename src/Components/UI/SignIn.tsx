@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { useFormik } from 'formik';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { useFormik } from "formik";
+import axios from "axios";
 
-import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from './../../Auth/authStore';
-import { server } from './../../Helpers/serverInfo';
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "./../../Auth/authStore";
+import { server } from "./../../Helpers/serverInfo";
 
-import { faAt, faLock } from '@fortawesome/free-solid-svg-icons';
-import InputCard from '../Cards/InputCard';
-import styles from '../Styles/SignIn.module.css';
-import Input from '../UI/Input';
-import Button from './Button';
+import { faAt, faLock } from "@fortawesome/free-solid-svg-icons";
+import InputCard from "../Cards/InputCard";
+import styles from "../Styles/SignIn.module.css";
+import Input from "../UI/Input";
+import Button from "./Button";
 
 interface Props {
   className?: string;
@@ -30,14 +30,15 @@ const SignIn: React.FC<Props> = (props) => {
 
   useEffect(() => {
     if (authenticated) {
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
+    // eslint-disable-next-line
   }, []);
 
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     onSubmit: async ({ email, password }) => {
       console.log(loginUrl);
@@ -56,10 +57,10 @@ const SignIn: React.FC<Props> = (props) => {
         alert(`${username}, you have been signed in with the token: ${token}.`);
         setAuth(username, email, token);
 
-        navigate('/dashboard');
+        navigate("/dashboard");
       } catch (error) {
-        console.error('Unable to login with credentials');
-        alert('Incorrect credentials. Try again.');
+        console.error("Unable to login with credentials");
+        alert("Incorrect credentials. Try again.");
       }
     },
   });

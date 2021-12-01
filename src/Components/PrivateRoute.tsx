@@ -7,6 +7,7 @@ const PrivateRoute = () => {
 
   useEffect(() => {
     restoreAuth();
+    // eslint-disable-next-line
   }, []);
 
   return authenticated ? <Outlet /> : <Navigate to="/sign-in" />;

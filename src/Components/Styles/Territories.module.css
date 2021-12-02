@@ -1,0 +1,8 @@
+@import './vars.css';
+
+.territoryContainer {
+  margin: 1em 0.5em;
+  font-size: var(--fontMd);
+  max-height: 68%;
+  overflow: scroll;
+}

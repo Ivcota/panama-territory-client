@@ -1,13 +1,16 @@
-import axios from "axios";
-import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
-import { useAuthStore } from "../Auth/authStore";
+import axios from 'axios';
+import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
+import { useAuthStore } from '../Auth/authStore';
 import {
   TerritoryInterface,
   useTerritoryStore,
-} from "../Helpers/territoryStore";
-import { server } from "./../Helpers/serverInfo";
-import styles from "./Styles/Dashboard.module.css";
+} from '../Helpers/territoryStore';
+import { server } from './../Helpers/serverInfo';
+
+import styles from './Styles/Dashboard.module.css';
+import NavBar from './UI/NavBar';
+import Territories from './UI/Territories';
 
 const Dashboard = () => {
   const { username, logout, token } = useAuthStore();
@@ -15,7 +18,7 @@ const Dashboard = () => {
 
   // ReactQuery data fetch with axios
   // Pull array out of the data object below. Typescript allows for autocomplete of the map.
-  const { data, isLoading, isError } = useQuery("territory", async () => {
+  const { data, isLoading, isError } = useQuery('territory', async () => {
     const res = await axios.get(`${server}/territorys/`, {
       headers: {
         Authorization: `Token ${token}`,
@@ -37,12 +40,16 @@ const Dashboard = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1>Welcome {username} to your dashboard.</h1>
-      <button onClick={() => logout()}>Sign Out</button>
-      <div>
+    <div className={styles.dashboard}>
+      <NavBar username={username} onClick={() => logout()} />
+      <div className={styles.titleContainer}>
+        <h1>My Territories</h1>
+        <div className={styles.line} />
+      </div>
+      <Territories />
+      {/* <div>
         <div className={styles.list}>
-          {/* Ofcourse this is not how we want to do this, but I wrote this out as an example of how the links can work. When clicked, it will reroute to another page and use the url params as props for that page. */}
+          Ofcourse this is not how we want to do this, but I wrote this out as an example of how the links can work. When clicked, it will reroute to another page and use the url params as props for that page.
           {data?.map(({ id, name, photo, territory_type, account, notes }) => {
             return (
               <div key={id} className={styles.card}>
@@ -71,7 +78,7 @@ const Dashboard = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

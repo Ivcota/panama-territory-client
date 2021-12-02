@@ -1,6 +1,30 @@
+@import './vars.css';
 /* Dummy Styles -- Feel free to replace */
-.container {
-  padding: 0 5vw;
+
+.dashboard {
+  height: 100vh;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h1 {
+  margin: 1em 0.3em 0;
+  font-family: var(--fontTwo);
+  font-weight: 400;
+  font-size: var(--fontLg);
+  color: var(--text1);
+}
+
+.line {
+  margin: 0.2em 0.3em;
+  width: 25%;
+  background-color: var(--text1);
+  font-size: var(--fontLg);
+  border: 0.5px solid var(--text1);
 }
 
 .list {
@@ -54,4 +78,11 @@
 
 .card__paragraph {
   margin-bottom: 1rem;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  margin: 0 auto;
 }

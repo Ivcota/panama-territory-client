@@ -1,0 +1,24 @@
+@import './vars.css';
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--brand);
+}
+
+.btn {
+  padding: 0.6em 1.3em;
+  background-color: transparent;
+  color: var(--text1);
+  font-size: var(--fontMd);
+  font-family: var(--fontTwo);
+}
+
+.userName {
+  margin: 0.8em 1.5em;
+  font-family: var(--fontTwo);
+  font-size: var(--fontMd);
+  color: var(--text1);
+  font-weight: 400;
+}

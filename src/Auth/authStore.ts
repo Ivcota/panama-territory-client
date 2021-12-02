@@ -1,4 +1,5 @@
 import create from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface AuthState {
   username: string;
@@ -13,55 +14,57 @@ interface AuthStateZ extends AuthState {
   restoreAuth: () => void;
 }
 
-export const useAuthStore = create<AuthStateZ>((set) => ({
-  username: "",
-  email: "",
-  token: "",
-  authenticated: false,
-  setAuth: (username, email, token) => {
-    const authState: AuthState = {
-      username,
-      email,
-      token,
-      authenticated: true,
-    };
-    // Set Authentication info to the localstorage
-    localStorage.setItem("authInfo", JSON.stringify(authState));
+export const useAuthStore = create<AuthStateZ>(
+  devtools((set) => ({
+    username: "",
+    email: "",
+    token: "",
+    authenticated: false,
+    setAuth: (username, email, token) => {
+      const authState: AuthState = {
+        username,
+        email,
+        token,
+        authenticated: true,
+      };
+      // Set Authentication info to the localstorage
+      localStorage.setItem("authInfo", JSON.stringify(authState));
 
-    set((state) => ({
-      email,
-      username,
-      token,
-      authenticated: true,
-    }));
-  },
-  logout: () => {
-    const authState: AuthState = {
-      username: "",
-      email: "",
-      token: "",
-      authenticated: false,
-    };
-
-    // Empty Authentication info in localstorage
-    localStorage.setItem("authInfo", JSON.stringify(authState));
-
-    set((state) => {
-      return {
-        authenticated: false,
+      set((state) => ({
+        email,
+        username,
+        token,
+        authenticated: true,
+      }));
+    },
+    logout: () => {
+      const authState: AuthState = {
+        username: "",
         email: "",
         token: "",
-        username: "",
+        authenticated: false,
       };
-    });
-  },
-  restoreAuth: () => {
-    // Restore Auth state from local storage
-    const stringedAuth = localStorage.getItem("authInfo");
-    const authState: AuthState = JSON.parse(stringedAuth as string);
 
-    set((state) => {
-      return authState;
-    });
-  },
-}));
+      // Empty Authentication info in localstorage
+      localStorage.setItem("authInfo", JSON.stringify(authState));
+
+      set((state) => {
+        return {
+          authenticated: false,
+          email: "",
+          token: "",
+          username: "",
+        };
+      });
+    },
+    restoreAuth: () => {
+      // Restore Auth state from local storage
+      const stringedAuth = localStorage.getItem("authInfo");
+      const authState: AuthState = JSON.parse(stringedAuth as string);
+
+      set((state) => {
+        return authState;
+      });
+    },
+  }))
+);

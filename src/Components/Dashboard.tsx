@@ -2,20 +2,16 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../Auth/authStore";
+import {
+  TerritoryInterface,
+  useTerritoryStore,
+} from "../Helpers/territoryStore";
 import { server } from "./../Helpers/serverInfo";
 import styles from "./Styles/Dashboard.module.css";
 
-interface TerritoryInterface {
-  account: number;
-  id: number;
-  name: string;
-  notes: string;
-  photo: string;
-  territory_type: string;
-}
-
 const Dashboard = () => {
   const { username, logout, token } = useAuthStore();
+  const { setSelectedCard } = useTerritoryStore();
 
   // ReactQuery data fetch with axios
   // Pull array out of the data object below. Typescript allows for autocomplete of the map.
@@ -47,7 +43,7 @@ const Dashboard = () => {
       <div>
         <div className={styles.list}>
           {/* Ofcourse this is not how we want to do this, but I wrote this out as an example of how the links can work. When clicked, it will reroute to another page and use the url params as props for that page. */}
-          {data?.map(({ id, name, photo, territory_type }) => {
+          {data?.map(({ id, name, photo, territory_type, account, notes }) => {
             return (
               <div key={id} className={styles.card}>
                 <h1 className={styles.card__title}>
@@ -55,7 +51,20 @@ const Dashboard = () => {
                 </h1>
                 <p className={styles.card__paragraph}>Type: {territory_type}</p>
                 <img className={styles.card__img} src={photo} alt="Img" />
-                <Link to={`/territory/${id}`} className={styles.card__button}>
+                <Link
+                  onClick={() => {
+                    setSelectedCard({
+                      id,
+                      account,
+                      name,
+                      notes,
+                      photo,
+                      territory_type,
+                    });
+                  }}
+                  to={`/territory/${id}`}
+                  className={styles.card__button}
+                >
                   View Card
                 </Link>
               </div>

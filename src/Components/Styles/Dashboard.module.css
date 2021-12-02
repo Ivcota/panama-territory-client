@@ -18,6 +18,12 @@
   flex-direction: column;
   align-items: center;
   background-color: hsl(0, 0%, 95%);
+  transition: all;
+  transition-duration: 200ms;
+}
+
+.card:hover {
+  transform: scale(0.98);
 }
 
 .card__button {

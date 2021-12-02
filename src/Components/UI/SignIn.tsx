@@ -54,7 +54,6 @@ const SignIn: React.FC<Props> = (props) => {
         ).data;
         // Log User details
         console.log({ token, email, username });
-        alert(`${username}, you have been signed in with the token: ${token}.`);
         setAuth(username, email, token);
 
         navigate("/dashboard");

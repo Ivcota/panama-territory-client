@@ -7,6 +7,7 @@ import Dashboard from "./Components/Dashboard";
 import Landing from "./Components/Landing";
 import PrivateRoute from "./Components/PrivateRoute";
 import SignInPage from "./Components/SignInPage";
+import TerritoryPage from "./Components/TerritoryPage";
 
 const App = () => {
   const { restoreAuth } = useAuthStore();
@@ -23,6 +24,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+        <Route path="/territory/:id" element={<PrivateRoute />}>
+          <Route path="/territory/:id" element={<TerritoryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

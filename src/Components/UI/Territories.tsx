@@ -11,7 +11,11 @@ interface Props {
 const Territories: React.FC<Props> = ({ data }) => {
   console.log(data);
   return (
-    <div className={styles.territoryContainer}>{/* <TerritoryCard /> */}</div>
+    <div className={styles.territoryContainer}>
+      {data.map((territory) => {
+        return <TerritoryCard territory={territory} />;
+      })}
+    </div>
   );
 };
 

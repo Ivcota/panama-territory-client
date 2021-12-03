@@ -3,16 +3,12 @@
 .splash {
   background-image: url('../../Assests/beach1.jpg');
   background-size: cover;
-  height: 85vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.splash svg path {
-  fill: var(--white);
 }
 
 .titleContainer {
@@ -41,7 +37,7 @@
 }
 
 .btnContainer {
-  height: 15vh;
+  height: 20vh;
   width: 100%;
   background-color: var(--white);
   display: flex;

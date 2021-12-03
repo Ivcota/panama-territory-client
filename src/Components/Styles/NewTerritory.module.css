@@ -1,0 +1,41 @@
+@import './vars.css';
+
+.BtnContainer {
+  width: 96%;
+  padding: 1rem 0;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Btn {
+  position: relative;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  background-color: orange;
+}
+
+.SubBtn {
+  position: absolute;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  background-color: turquoise;
+}
+
+.Icon {
+  padding: 0.63em 0.72em;
+  font-size: clamp(14px, 6vw, 24px);
+  text-align: center;
+  color: white;
+}
+
+.SubIcon {
+  padding: 0.63em 0.72em;
+  font-size: clamp(12px, 4.5vw, 18px);
+  text-align: center;
+  color: white;
+}

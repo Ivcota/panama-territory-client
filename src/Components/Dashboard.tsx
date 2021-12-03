@@ -10,6 +10,7 @@ import { server } from './../Helpers/serverInfo';
 
 import styles from './Styles/Dashboard.module.css';
 import NavBar from './UI/NavBar';
+import NewTerritory from './UI/NewTerritory';
 import Territories from './UI/Territories';
 
 const Dashboard = () => {
@@ -47,6 +48,7 @@ const Dashboard = () => {
         <div className={styles.line} />
         <Territories data={data as TerritoryInterface[]} />
       </div>
+      <NewTerritory />
     </div>
   );
 };

@@ -46,7 +46,10 @@ const Dashboard = () => {
         <h1>My Territories</h1>
         <div className={styles.line} />
       </div>
-      <Territories />
+
+      {/* This is where the problem starts. Uncomment once you sign in */}
+      {/* <Territories data={data} /> */}
+
       {/* <div>
         <div className={styles.list}>
           Ofcourse this is not how we want to do this, but I wrote this out as an example of how the links can work. When clicked, it will reroute to another page and use the url params as props for that page.

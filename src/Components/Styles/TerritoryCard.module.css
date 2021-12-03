@@ -3,16 +3,59 @@
 .territoryCard {
   width: 100%;
   margin: 1em 0;
-  padding: 1em;
-  display: flex;
-  flex-direction: row;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.4fr;
   box-sizing: border-box;
   font-size: var(--fontMd);
-  border: 1px solid var(--brand);
 }
 
-.territoryCard h2,
-.territoryCard h3 {
-  margin: 0 0.5em;
+.typeIconContainer {
+  background-color: var(--color5);
+  border-radius: 0.5rem 0 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.titleContainer {
+  border-top: 3px solid var(--color5);
+  border-bottom: 3px solid var(--color5);
+}
+
+.title {
   font-size: var(--fontMd);
+  font-family: var(--fontTwo);
+  font-weight: 600;
+  color: var(--text1);
+  margin: 0 0.5em;
+}
+
+.type {
+  font-family: var(--fontTwo);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text1);
+  font-size: var(--fontSm);
+  margin: 0 0.5em 0.2em;
+}
+
+.btnContainer {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-top: 3px solid var(--color5);
+  border-bottom: 3px solid var(--color5);
+  border-right: 3px solid var(--color5);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: var(--fontMd);
+}
+
+.download {
+  color: var(--brand);
+}
+
+.delete {
+  color: var(--error);
 }

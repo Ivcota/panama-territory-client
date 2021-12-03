@@ -37,7 +37,7 @@ html {
 
   --success-light: hsl(90, 100%, 44%);
 
-  --error-light: hsl(354, 100%, 68%);
+  --error-light: hsl(354, 100%, 60%);
 
   /* dark */
   /* 
@@ -94,7 +94,7 @@ html {
 
   --success: var(--success-light);
 
-  --error: var(--accent-light);
+  --error: var(--error-light);
   /*===== Fonts =====*/
 
   --fontOne: 'Bebas Neue', cursive;

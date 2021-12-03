@@ -3,21 +3,14 @@ import TerritoryCard from '../Cards/TerritoryCard';
 
 import styles from '../Styles/Territories.module.css';
 
-const Territories: React.FC = () => {
+interface Props {
+  data: [];
+}
+
+const Territories: React.FC<Props> = (props) => {
+  console.log(props.data);
   return (
-    <div className={styles.territoryContainer}>
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-      <TerritoryCard />
-    </div>
+    <div className={styles.territoryContainer}>{/* <TerritoryCard /> */}</div>
   );
 };
 

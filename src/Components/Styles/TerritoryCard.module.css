@@ -39,6 +39,7 @@
   color: var(--text1);
   font-size: var(--fontSm);
   margin: 0 0.5em 0.2em;
+  text-transform: capitalize;
 }
 
 .btnContainer {

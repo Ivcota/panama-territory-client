@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFile, faDownload, faTrash } from "@fortawesome/free-solid-svg-icons";
-import styles from "../Styles/TerritoryCard.module.css";
-import { TerritoryInterface } from "./../../Helpers/territoryStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFile,
+  faPhone,
+  faPenAlt,
+  faDoorOpen,
+  faDownload,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
+import styles from '../Styles/TerritoryCard.module.css';
+import { TerritoryInterface } from './../../Helpers/territoryStore';
 
 interface Props {
   territory: TerritoryInterface;
 }
 
 const TerritoryCard: React.FC<Props> = (props) => {
+  const [iconType, setIconType] = useState(faFile);
   const { id, name, territory_type } = props.territory;
+
+  useEffect(() => {
+    if (territory_type === 'phone') {
+      setIconType(faPhone);
+    } else if (territory_type === 'letter_writing') {
+      setIconType(faPenAlt);
+    } else if (territory_type === 'door_door') {
+      setIconType(faDoorOpen);
+    } else {
+      setIconType(faFile);
+    }
+  }, []);
 
   return (
     <div key={id} className={styles.territoryCard}>
       <div className={styles.typeIconContainer}>
-        <FontAwesomeIcon icon={faFile} />
+        <FontAwesomeIcon icon={iconType} />
       </div>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>{name}</h2>

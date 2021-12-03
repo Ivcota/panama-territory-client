@@ -1,16 +1,16 @@
-import axios from 'axios';
-import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
-import { useAuthStore } from '../Auth/authStore';
+import axios from "axios";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
+import { useAuthStore } from "../Auth/authStore";
 import {
   TerritoryInterface,
   useTerritoryStore,
-} from '../Helpers/territoryStore';
-import { server } from './../Helpers/serverInfo';
+} from "../Helpers/territoryStore";
+import { server } from "./../Helpers/serverInfo";
 
-import styles from './Styles/Dashboard.module.css';
-import NavBar from './UI/NavBar';
-import Territories from './UI/Territories';
+import styles from "./Styles/Dashboard.module.css";
+import NavBar from "./UI/NavBar";
+import Territories from "./UI/Territories";
 
 const Dashboard = () => {
   const { username, logout, token } = useAuthStore();
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   // ReactQuery data fetch with axios
   // Pull array out of the data object below. Typescript allows for autocomplete of the map.
-  const { data, isLoading, isError } = useQuery('territory', async () => {
+  const { data, isLoading, isError } = useQuery("territory", async () => {
     const res = await axios.get(`${server}/territorys/`, {
       headers: {
         Authorization: `Token ${token}`,
@@ -26,7 +26,7 @@ const Dashboard = () => {
     });
 
     console.log(res.data);
-    return res.data as TerritoryInterface[];
+    return res.data as [];
   });
 
   // Show if Loading
@@ -45,6 +45,7 @@ const Dashboard = () => {
       <div className={styles.titleContainer}>
         <h1>My Territories</h1>
         <div className={styles.line} />
+        <Territories data={data as TerritoryInterface[]} />
       </div>
 
       {/* This is where the problem starts. Uncomment once you sign in */}

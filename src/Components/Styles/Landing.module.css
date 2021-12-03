@@ -1,7 +1,8 @@
 @import './vars.css';
 
 .splash {
-  background-image: url('../../Assests/beach1.jpg');
+  background-image: linear-gradient(#ffffff00, #00000000, #1c0f13c0),
+    url('../../Assests/beach2.jpg');
   background-size: cover;
   height: 80vh;
   width: 100%;
@@ -9,11 +10,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0 0 2rem 2rem;
 }
+
+/* .gradient {
+  width: 100%;
+  height: 100%;
+  background: firebrick;
+} */
 
 .titleContainer {
   height: 50%;
   width: 100%;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +30,7 @@
 }
 
 .title {
-  margin: 0 0 1em;
+  margin: 0 0 1.5em;
   font-family: var(--fontOne);
   font-size: var(--fontXl);
   color: var(--white);

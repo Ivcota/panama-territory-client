@@ -7,6 +7,7 @@ const Landing = () => {
   return (
     <>
       <div className={styles.splash}>
+        <div className={styles.gradient} />
         <div className={styles.titleContainer}>
           <h1 className={styles.title}>Territory App 2021</h1>
           <p className={styles.qoute}>This is a qoute</p>

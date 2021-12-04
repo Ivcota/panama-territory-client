@@ -4,5 +4,11 @@
   margin: 1em 0.5em;
   font-size: var(--fontMd);
   max-height: 68%;
-  overflow: scroll;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.territoryContainer::-webkit-scrollbar {
+  display: none;
 }

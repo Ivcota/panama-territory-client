@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFile,
@@ -33,7 +34,12 @@ const TerritoryCard: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <div key={id} className={styles.territoryCard}>
+    <motion.div
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.95 }}
+      key={id}
+      className={styles.territoryCard}
+    >
       <div className={styles.typeIconContainer}>
         <FontAwesomeIcon icon={iconType} />
       </div>
@@ -45,7 +51,7 @@ const TerritoryCard: React.FC<Props> = (props) => {
         <FontAwesomeIcon className={styles.download} icon={faDownload} />
         <FontAwesomeIcon className={styles.delete} icon={faTrash} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

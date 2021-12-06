@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
 import styles from '../Styles/Button.module.css';
 
 interface Props {
@@ -10,12 +11,14 @@ interface Props {
 
 const Button: React.FC<Props> = (props) => {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.8 }}
       className={`${styles.btn} ${props.className}`}
       onClick={props.onClick}
     >
       {props.title}
-    </button>
+    </motion.button>
   );
 };
 

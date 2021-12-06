@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFile,
@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import styles from '../Styles/TerritoryCard.module.css';
 import { TerritoryInterface } from './../../Helpers/territoryStore';
+import TerritoryModal from '../Modals/TerritoryModal';
 
 interface Props {
   territory: TerritoryInterface;
@@ -19,6 +20,7 @@ interface Props {
 
 const TerritoryCard: React.FC<Props> = (props) => {
   const [iconType, setIconType] = useState(faFile);
+  const [modalOpen, setModalOpen] = useState(false);
   const { id, name, territory_type } = props.territory;
 
   useEffect(() => {
@@ -33,24 +35,40 @@ const TerritoryCard: React.FC<Props> = (props) => {
     }
   }, []);
 
+  const open = () => setModalOpen(true);
+  const close = () => setModalOpen(false);
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.025 }}
-      whileTap={{ scale: 0.95 }}
-      key={id}
-      className={styles.territoryCard}
-    >
-      <div className={styles.typeIconContainer}>
-        <FontAwesomeIcon icon={iconType} />
-      </div>
-      <div className={styles.titleContainer}>
-        <h2 className={styles.title}>{name}</h2>
-        <h3 className={styles.type}>{territory_type}</h3>
-      </div>
-      <div className={styles.btnContainer}>
-        <FontAwesomeIcon className={styles.delete} icon={faTrash} />
-      </div>
-    </motion.div>
+    <>
+      <motion.div
+        whileHover={{ scale: 1.025 }}
+        whileTap={{ scale: 0.95 }}
+        key={id}
+        className={styles.territoryCard}
+        onClick={open}
+      >
+        <div className={styles.typeIconContainer}>
+          <FontAwesomeIcon icon={iconType} />
+        </div>
+        <div className={styles.titleContainer}>
+          <h2 className={styles.title}>{name}</h2>
+          <h3 className={styles.type}>{territory_type}</h3>
+        </div>
+        <div className={styles.btnContainer}>
+          <FontAwesomeIcon className={styles.delete} icon={faTrash} />
+        </div>
+      </motion.div>
+
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter={true}
+        onExitComplete={() => null}
+      >
+        {modalOpen && (
+          <TerritoryModal modalOpen={modalOpen} handleClose={close} />
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

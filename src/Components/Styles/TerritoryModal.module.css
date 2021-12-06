@@ -1,0 +1,14 @@
+@import './vars.css';
+@import './theme.css';
+
+.modal {
+  width: 75%;
+  height: 50%;
+  background-color: var(--brand);
+  margin: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

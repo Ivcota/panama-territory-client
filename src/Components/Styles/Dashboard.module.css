@@ -1,8 +1,10 @@
 @import './vars.css';
+@import './theme.css';
 /* Dummy Styles -- Feel free to replace */
 
 .dashboard {
   height: 100vh;
+  background-color: var(--background);
 }
 
 .titleContainer {

@@ -1,4 +1,5 @@
 @import './vars.css';
+@import './theme.css';
 
 .BtnContainer {
   width: 96%;

@@ -1,4 +1,5 @@
 @import './vars.css';
+@import './theme.css';
 
 .territoryCard {
   width: 100%;
@@ -9,6 +10,7 @@
   grid-template-columns: 0.2fr 1fr 0.4fr;
   box-sizing: border-box;
   font-size: var(--fontMd);
+  background-color: var(--white);
 }
 
 .typeIconContainer {

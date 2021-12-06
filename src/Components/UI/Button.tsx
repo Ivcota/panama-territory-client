@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../Styles/Button.module.css';
 
 interface Props {
   onClick?: () => void;
   title: string;
   className?: string;
+  icon?: any;
 }
 
 const Button: React.FC<Props> = (props) => {
@@ -17,6 +19,7 @@ const Button: React.FC<Props> = (props) => {
       className={`${styles.btn} ${props.className}`}
       onClick={props.onClick}
     >
+      <FontAwesomeIcon icon={props.icon} />
       {props.title}
     </motion.button>
   );

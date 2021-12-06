@@ -17,9 +17,15 @@
 }
 
 .userName {
-  margin: 0.8em 1.5em;
+  margin: 0.5em 0.5em;
+  background-color: transparent;
   font-family: var(--fontTwo);
   font-size: var(--fontMd);
   color: var(--text1);
   font-weight: 400;
+  text-transform: none !important;
+}
+
+.userName svg {
+  margin: 0 0.5em;
 }

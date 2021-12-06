@@ -48,7 +48,6 @@ const TerritoryCard: React.FC<Props> = (props) => {
         <h3 className={styles.type}>{territory_type}</h3>
       </div>
       <div className={styles.btnContainer}>
-        <FontAwesomeIcon className={styles.download} icon={faDownload} />
         <FontAwesomeIcon className={styles.delete} icon={faTrash} />
       </div>
     </motion.div>

@@ -15,8 +15,20 @@
   justify-content: flex-end;
 }
 
-h1 {
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: 1em 0.3em 0;
+  font-size: var(--fontLg);
+}
+
+.title svg {
+  margin-right: 0.3em;
+}
+
+h1 {
+  margin: 0;
   font-family: var(--fontTwo);
   font-weight: 400;
   font-size: var(--fontLg);

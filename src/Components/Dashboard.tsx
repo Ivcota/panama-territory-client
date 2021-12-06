@@ -8,6 +8,8 @@ import {
 } from '../Helpers/territoryStore';
 import { server } from './../Helpers/serverInfo';
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './Styles/Dashboard.module.css';
 import NavBar from './UI/NavBar';
 import NewTerritory from './UI/NewTerritory';
@@ -44,7 +46,10 @@ const Dashboard = () => {
     <div className={styles.dashboard}>
       <NavBar username={username} onClick={() => logout()} />
       <div className={styles.titleContainer}>
-        <h1>My Territories</h1>
+        <div className={styles.title}>
+          <h1>My Territories</h1>
+        </div>
+
         <div className={styles.line} />
         <Territories data={data as TerritoryInterface[]} />
       </div>

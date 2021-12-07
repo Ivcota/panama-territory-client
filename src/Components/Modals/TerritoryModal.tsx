@@ -43,6 +43,8 @@ const portalDiv = document.getElementById('modal');
 const TerritoryModal: React.FC<Props> = (props) => {
   const { name, territory_type, notes, photo } = props.territory;
 
+  const stopClose = (e: any) => e.stopPropagation();
+
   return portalDiv
     ? ReactDOM.createPortal(
         <>
@@ -53,13 +55,24 @@ const TerritoryModal: React.FC<Props> = (props) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              onClick={(e) => e.stopPropagation()}
+              onClick={props.handleClose}
             >
-              <h2 className={styles.title}>{name}</h2>
-              <h3 className={styles.type}>{territory_type}</h3>
-              <img className={styles.photo} src={photo} alt="" />
-              <p className={styles.notes}>{notes}</p>
-              <div className={styles.btnContainer}>
+              <h2 onClick={stopClose} className={styles.title}>
+                {name}
+              </h2>
+              <h3 onClick={stopClose} className={styles.type}>
+                {territory_type}
+              </h3>
+              <img
+                onClick={stopClose}
+                className={styles.photo}
+                src={photo}
+                alt=""
+              />
+              <p onClick={stopClose} className={styles.notes}>
+                {notes}
+              </p>
+              <div onClick={stopClose} className={styles.btnContainer}>
                 <Button
                   className={`${styles.btn} ${styles.close}`}
                   title="Close"

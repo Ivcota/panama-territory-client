@@ -52,7 +52,7 @@
 }
 
 .btnContainer {
-  width: 100%;
+  width: 90%;
   margin: 0 0 2em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

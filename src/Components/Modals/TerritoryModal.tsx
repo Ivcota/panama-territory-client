@@ -55,10 +55,21 @@ const TerritoryModal: React.FC<Props> = (props) => {
               exit="exit"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2>{name}</h2>
-              <h2>{territory_type}</h2>
-              <p>{notes}</p>
-              <Button title="close" onClick={props.handleClose} />
+              <h2 className={styles.title}>{name}</h2>
+              <h3 className={styles.type}>{territory_type}</h3>
+              <img className={styles.photo} src={photo} alt="" />
+              <p className={styles.notes}>{notes}</p>
+              <div className={styles.btnContainer}>
+                <Button
+                  className={`${styles.btn} ${styles.close}`}
+                  title="Close"
+                  onClick={props.handleClose}
+                />
+                <Button
+                  className={`${styles.btn} ${styles.download}`}
+                  title="Download"
+                />
+              </div>
             </motion.div>
           </Backdrop>
         </>,

@@ -65,7 +65,11 @@ const TerritoryCard: React.FC<Props> = (props) => {
         onExitComplete={() => null}
       >
         {modalOpen && (
-          <TerritoryModal modalOpen={modalOpen} handleClose={close} />
+          <TerritoryModal
+            territory={props.territory}
+            modalOpen={modalOpen}
+            handleClose={close}
+          />
         )}
       </AnimatePresence>
     </>

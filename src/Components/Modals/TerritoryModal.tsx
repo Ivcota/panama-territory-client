@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { motion } from 'framer-motion';
-import Backdrop from './Backdrop';
+import { TerritoryInterface } from './../../Helpers/territoryStore';
 
 import styles from '../Styles/TerritoryModal.module.css';
 import Button from '../UI/Button';
+import Backdrop from './Backdrop';
 
 interface Props {
   handleClose: () => void;
   modalOpen: boolean;
+  territory: TerritoryInterface;
 }
 
 const dropIn = {
@@ -39,6 +41,8 @@ const dropIn = {
 const portalDiv = document.getElementById('modal');
 
 const TerritoryModal: React.FC<Props> = (props) => {
+  const { name, territory_type, notes, photo } = props.territory;
+
   return portalDiv
     ? ReactDOM.createPortal(
         <>
@@ -51,6 +55,9 @@ const TerritoryModal: React.FC<Props> = (props) => {
               exit="exit"
               onClick={(e) => e.stopPropagation()}
             >
+              <h2>{name}</h2>
+              <h2>{territory_type}</h2>
+              <p>{notes}</p>
               <Button title="close" onClick={props.handleClose} />
             </motion.div>
           </Backdrop>

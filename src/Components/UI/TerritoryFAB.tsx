@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faPhone, faPenAlt } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
-import classes from '../Styles/NewTerritory.module.css';
+import classes from '../Styles/TerritoryFAB.module.css';
 
-const NewTerritory = () => {
+const TerritoryFAB = () => {
   const [btnOpen, setBtnOpen] = useState(false);
 
   const btn1 = {
@@ -69,4 +69,4 @@ const NewTerritory = () => {
   );
 };
 
-export default NewTerritory;
+export default TerritoryFAB;

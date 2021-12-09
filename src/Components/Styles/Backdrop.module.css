@@ -13,14 +13,3 @@
   align-items: center;
   z-index: 1;
 }
-
-@media only screen and (mim-width: 768px) {
-  .Backdrop::-webkit-scrollbar {
-    display: none;
-  }
-
-  .Backdrop {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}

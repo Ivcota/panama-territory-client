@@ -8,10 +8,9 @@ import {
 } from '../Helpers/territoryStore';
 import { server } from './../Helpers/serverInfo';
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './Styles/Dashboard.module.css';
 import NavBar from './UI/NavBar';
+import Spinner from './UI/Spinner';
 import TerritoryFAB from './UI/TerritoryFAB';
 import Territories from './UI/Territories';
 
@@ -34,7 +33,7 @@ const Dashboard = () => {
 
   // Show if Loading
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   // Show if there is an error

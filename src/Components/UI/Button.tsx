@@ -6,7 +6,7 @@ import styles from '../Styles/Button.module.css';
 
 interface Props {
   onClick?: () => void;
-  title: string;
+  title?: string;
   className?: string;
   icon?: any;
 }

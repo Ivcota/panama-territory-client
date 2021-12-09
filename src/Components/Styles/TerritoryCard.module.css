@@ -56,10 +56,8 @@
   font-size: var(--fontMd);
 }
 
-.download {
-  color: var(--brand);
-}
-
 .delete {
+  background-color: transparent;
   color: var(--error);
+  padding: 0.35em 0.75em;
 }

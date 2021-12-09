@@ -13,6 +13,7 @@ import {
 import styles from '../Styles/TerritoryCard.module.css';
 import { TerritoryInterface } from './../../Helpers/territoryStore';
 import TerritoryModal from '../Modals/TerritoryModal';
+import Button from '../UI/Button';
 
 interface Props {
   territory: TerritoryInterface;
@@ -38,6 +39,8 @@ const TerritoryCard: React.FC<Props> = (props) => {
   const open = () => setModalOpen(true);
   const close = () => setModalOpen(false);
 
+  const stopOpen = (e: any) => e.stopPropagation();
+
   return (
     <>
       <motion.div
@@ -54,8 +57,8 @@ const TerritoryCard: React.FC<Props> = (props) => {
           <h2 className={styles.title}>{name}</h2>
           <h3 className={styles.type}>{territory_type}</h3>
         </div>
-        <div className={styles.btnContainer}>
-          <FontAwesomeIcon className={styles.delete} icon={faTrash} />
+        <div onClick={stopOpen} className={styles.btnContainer}>
+          <Button icon={faTrash} className={styles.delete} />
         </div>
       </motion.div>
 

@@ -57,31 +57,34 @@ const TerritoryModal: React.FC<Props> = (props) => {
               exit="exit"
               onClick={props.handleClose}
             >
-              <h2 onClick={stopClose} className={styles.title}>
-                {name}
-              </h2>
-              <h3 onClick={stopClose} className={styles.type}>
-                {territory_type}
-              </h3>
               <img
                 onClick={stopClose}
                 className={styles.photo}
                 src={photo}
                 alt=""
               />
-              <p onClick={stopClose} className={styles.notes}>
-                {notes}
-              </p>
-              <div onClick={stopClose} className={styles.btnContainer}>
-                <Button
-                  className={`${styles.btn} ${styles.close}`}
-                  title="Close"
-                  onClick={props.handleClose}
-                />
-                <Button
-                  className={`${styles.btn} ${styles.download}`}
-                  title="Download"
-                />
+              <div className={styles.modalContent}>
+                <h2 onClick={stopClose} className={styles.title}>
+                  {name}
+                </h2>
+                <h3 onClick={stopClose} className={styles.type}>
+                  {territory_type}
+                </h3>
+
+                <p onClick={stopClose} className={styles.notes}>
+                  {notes}
+                </p>
+                <div onClick={stopClose} className={styles.btnContainer}>
+                  <Button
+                    className={`${styles.btn} ${styles.close}`}
+                    title="Close"
+                    onClick={props.handleClose}
+                  />
+                  <Button
+                    className={`${styles.btn} ${styles.download}`}
+                    title="Download"
+                  />
+                </div>
               </div>
             </motion.div>
           </Backdrop>

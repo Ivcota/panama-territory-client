@@ -1,0 +1,63 @@
+@import './vars.css';
+@import './theme.css';
+
+.settings {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+  font-size: var(--fontMd);
+  background-color: var(--brand);
+}
+
+.titleContainer {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1em;
+  font-size: var(--fontMd);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.username {
+  font-size: var(--fontLg);
+  font-weight: 600;
+  font-family: var(--fontTwo);
+  margin: 0 0 0.2rem;
+  color: var(--text1);
+}
+
+.email,
+.congregation {
+  font-weight: 400;
+  font-family: var(--fontTwo);
+  margin: 0 0 0.2rem;
+  color: var(--text1);
+}
+
+.email {
+  font-size: clamp(12px, 4.7vw, 22px);
+}
+
+.congregation {
+  font-size: var(--fontMd);
+  font-style: italic;
+}
+
+.btnContainer {
+  width: 100%;
+  max-width: 700px;
+  margin: 1em auto 0.5em;
+  font-size: var(--fontMd);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btn {
+  width: clamp(125px, 50vw, 250px);
+  margin: 1em auto;
+  padding: 0.6em 0;
+  font-size: var(--fontMd);
+}

@@ -25,24 +25,24 @@ const NewAcc: React.FC<Props> = (props) => {
         <Input
           icon={faUser}
           type="text"
-          placeholder="Full Name"
           name="user_name"
+          label="Full Name"
           autoComplete="on"
           required={true}
         />
         <Input
           icon={faAt}
           type="email"
-          placeholder="Email"
           name="user_email"
+          label="Email"
           autoComplete="on"
           required={true}
         />
         <Input
           icon={faLock}
           type="password"
-          placeholder="Password"
           name="user_password"
+          label="Password"
           autoComplete="off"
           required={true}
         />

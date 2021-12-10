@@ -23,6 +23,8 @@ html {
 
   --text3-light: hsl(var(--brand-hue) 30% 60%);
 
+  --text4-light: hsl(var(--brand-hue) 20% 76%);
+
   --background-light: hsl(var(--brand-hue) 10% 95%);
 
   --color1-light: hsl(var(--brand-hue) 35% 25%);
@@ -81,6 +83,8 @@ html {
   --text2: var(--text2-light);
 
   --text3: var(--text3-light);
+
+  --text4: var(--text4-light);
 
   --white: #fff;
 

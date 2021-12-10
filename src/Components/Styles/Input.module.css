@@ -2,6 +2,7 @@
 @import './theme.css';
 
 .input {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +13,7 @@
   width: 100%;
   border-radius: 0.2rem;
   box-sizing: border-box;
-  padding: 0.5em 1em;
+  padding: 1.4em 1.5em 0.7em 0.5em;
   margin: 0.7em 0;
   border: none;
   background-color: var(--color3);
@@ -20,23 +21,40 @@
   font-size: var(--fontMd);
   color: var(--text2);
   letter-spacing: 0.8px;
+  transition: 0.2s;
 }
 
 .input input:-webkit-autofill,
 .input input:-webkit-autofill:hover,
 .input input:-webkit-autofill:focus {
   border: none;
-  background-color: white !important;
-  color: var(--text) !important;
-}
-
-.input input::placeholder {
-  font-size: var(--fontMd);
-  text-transform: uppercase;
+  -webkit-box-shadow: 0 0 0 30px var(--color3) inset;
+  -webkit-text-fill-color: var(--text2);
 }
 
 .input input:focus-visible {
   outline: 3px solid var(--brand);
+}
+
+.input label {
+  position: absolute;
+  align-self: flex-start;
+  margin-left: 0.7em;
+  top: 35%;
+  font-family: var(--fontTwo);
+  color: var(--text2);
+  font-size: var(--fontMd);
+  transition: 0.2s;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.input input:focus ~ label,
+.input input:valid ~ label {
+  top: 10%;
+  margin: 0.5em;
+  /* font-size: clamp(10px, 4vw, 20px); */
+  font-size: var(--fontSm);
 }
 
 .icon {
@@ -45,5 +63,11 @@
   padding: 0.2em 1em 0.2em 0.5em;
   font-size: var(--fontMd);
   background-color: var(--color3);
+  color: var(--text4);
+  transition: 0.2s;
+}
+
+.input input:focus ~ .icon,
+.input input:valid ~ .icon {
   color: var(--text3);
 }

@@ -71,7 +71,7 @@ const SignIn: React.FC<Props> = (props) => {
         <Input
           icon={faAt}
           type="email"
-          placeholder="Email"
+          label="Email"
           name="email"
           autoComplete="on"
           required={true}
@@ -81,7 +81,7 @@ const SignIn: React.FC<Props> = (props) => {
         <Input
           icon={faLock}
           type="password"
-          placeholder="Password"
+          label="Password"
           name="password"
           autoComplete="off"
           required={true}

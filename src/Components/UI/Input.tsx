@@ -6,7 +6,7 @@ interface Props {
   type: string;
   icon: any;
   name: string;
-  placeholder: string;
+  label: string;
   autoComplete: string;
   required: boolean;
   iconStyle?: string;
@@ -17,19 +17,19 @@ interface Props {
 const Input: React.FC<Props> = ({ onChange, value, ...props }) => {
   return (
     <div className={styles.input}>
-      <FontAwesomeIcon
-        className={`${styles.icon} ${props.iconStyle}`}
-        icon={props.icon}
-      />
       <input
         value={value}
         onChange={onChange}
         type={props.type}
         name={props.name}
-        placeholder={props.placeholder}
         autoComplete={props.autoComplete}
         required={props.required}
       />
+      <FontAwesomeIcon
+        className={`${styles.icon} ${props.iconStyle}`}
+        icon={props.icon}
+      />
+      <label htmlFor={props.name}>{props.label}</label>
     </div>
   );
 };
